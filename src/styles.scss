@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url("https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap");
 *,
 body,
 html {
@@ -9,7 +11,8 @@ html {
 }
 
 body {
-  font-family: "Arial", sans-serif;
+  font-family: "Parkinsans", sans-serif;
+  font-weight: 300;
   height: 100vh;
   background-color: #f9f4de;
 }

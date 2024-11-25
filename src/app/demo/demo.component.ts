@@ -24,3 +24,7 @@ export class DemoComponent {
     this.hydratedComponents.update((value) => value + 1);
   }
 }
+
+/**
+ *
+ */
