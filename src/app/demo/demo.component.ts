@@ -1,9 +1,10 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
 import { NavComponent } from '../nav/nav.component';
 import { ProductComponent } from '../product/product.component';
 import { CommonModule } from '@angular/common';
+import { ComponentCounterService } from '../component-counter.service';
 
 @Component({
   selector: 'app-demo',
@@ -18,17 +19,19 @@ import { CommonModule } from '@angular/common';
   templateUrl: './demo.component.html',
   styleUrl: './demo.component.scss',
 })
-export class DemoComponent {
+export class DemoComponent implements OnInit {
+  public componentsCounterService = inject(ComponentCounterService);
+  public itemsCounter = signal<number>(0);
   public loadedComponents = signal<number>(0);
   public hydratedComponents = signal<number>(0);
-  public itemsCounter = signal<number>(0);
 
-  public onComponentLoad(): void {
-    this.loadedComponents.update((value) => value + 1);
-  }
+  ngOnInit(): void {
+    const loadedComponents = this.componentsCounterService.loadedComponents();
+    const hydratedComponents =
+      this.componentsCounterService.hydratedComponents();
 
-  public onComponentHydrate(): void {
-    this.hydratedComponents.update((value) => value + 1);
+    this.loadedComponents.set(loadedComponents);
+    this.hydratedComponents.set(hydratedComponents);
   }
 
   public onItemAdded(quantity: number): void {
