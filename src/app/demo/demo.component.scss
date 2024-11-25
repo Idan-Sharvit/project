@@ -24,7 +24,7 @@ main {
   flex-direction: column;
   gap: 2rem;
   padding: 1rem;
-  @extend .grey-border;
+  @extend .blue-border;
 
   section {
     display: flex;
@@ -42,4 +42,12 @@ main {
   border: solid 1px black;
   color: grey;
   box-shadow: 7px 7px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.use-orange {
+  @extend .orange-border;
+}
+
+.use-blue {
+  @extend .blue-border;
 }

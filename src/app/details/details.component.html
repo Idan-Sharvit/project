@@ -23,8 +23,12 @@
     <section class="cards">
       <h1>Recommended products</h1>
       <div class="cards-list">
+        @defer (hydrate on interaction) {
         <app-card [img]="'../../assets/icons/hat.png'" (itemAdded)="addRecommendedItem($event)"></app-card>
+        }
+        @defer (hydrate on interaction) {
         <app-card [img]="'../../assets/icons/shoe.png'" (itemAdded)="addRecommendedItem($event)"></app-card>
+        }
       </div>
     </section>
   </main>

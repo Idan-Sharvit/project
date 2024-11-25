@@ -57,3 +57,11 @@ img {
   display: flex;
   justify-content: space-evenly;
 }
+
+.use-orange {
+  @extend .orange-border;
+}
+
+.use-blue {
+  @extend .blue-border;
+}

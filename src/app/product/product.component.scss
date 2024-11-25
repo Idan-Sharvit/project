@@ -12,3 +12,11 @@
   display: flex;
   justify-content: space-between;
 }
+
+.use-orange {
+  @extend .orange-border;
+}
+
+.use-blue {
+  @extend .blue-border;
+}

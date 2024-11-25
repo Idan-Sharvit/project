@@ -16,6 +16,9 @@ export class DemoComponent {
   public hydratedComponents = signal<number>(0);
   public itemsCounter = signal<number>(0);
 
+  public useBlue = signal<boolean>(false);
+  public useOrange = signal<boolean>(false);
+
   public onComponentLoad(): void {
     this.loadedComponents.update((value) => value + 1);
   }

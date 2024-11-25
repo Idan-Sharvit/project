@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" [ngClass]="{'use-orange': useOrange(), 'use-blue':useBlue()}">
   <div class="top-container">
     <p>{{title}}</p>
     <p>{{subtitle}}</p>

@@ -7,7 +7,6 @@
   width: 100%;
   @extend .grey-border;
   width: 650px;
-  // height: 600px;
   padding: 1rem;
 }
 
@@ -30,4 +29,12 @@ img {
 button {
   padding: 0.2rem;
   width: 100%;
+}
+
+.container.use-orange {
+  @extend .orange-border;
+}
+
+.container.use-blue {
+  @extend .blue-border;
 }
