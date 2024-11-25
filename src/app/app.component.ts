@@ -1,17 +1,12 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
+import { BeautifulButtonComponent } from './beautiful-button/beautiful-button.component';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [],
+  imports: [RouterOutlet, BeautifulButtonComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+  styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
-  protected totalCount = signal(0);
-
-  protected increment(): void {
-    this.totalCount.update((val) => val + 1);
-  }
-}
+export class AppComponent {}

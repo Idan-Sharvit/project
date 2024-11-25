@@ -1,0 +1,33 @@
+@import "../../borders.scss";
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  @extend .grey-border;
+  width: 650px;
+  // height: 600px;
+  padding: 1rem;
+}
+
+.top-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.subtitle {
+  display: flex;
+  justify-content: space-between;
+}
+
+img {
+  width: 400px;
+  height: 400px;
+}
+
+button {
+  padding: 0.2rem;
+  width: 100%;
+}

@@ -1,0 +1,45 @@
+@import "../../borders.scss";
+
+.container {
+  background-color: #f9f4de;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+  padding-inline: 10%;
+}
+
+.legend {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+  gap: 1rem;
+}
+
+main {
+  background-color: #f9f4de;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem;
+  @extend .grey-border;
+
+  section {
+    display: flex;
+    gap: 2rem;
+  }
+}
+
+.meta-data {
+  padding: 0.5rem;
+  background-color: #f9f4de;
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  align-self: flex-start;
+  border: solid 1px black;
+  color: grey;
+  box-shadow: 7px 7px 5px 0px rgba(0, 0, 0, 0.75);
+}

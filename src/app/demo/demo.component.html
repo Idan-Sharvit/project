@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="legend">
+    <p class="grey-border">grey - dehydrated</p>
+    <p class="orange-border">orange - fetching before hydrated</p>
+    <p class="blue-border">blue - hydrated</p>
+  </div>
+
+  <div class="meta-data">
+    <p># of loaded components: {{loadedComponents()}}</p>
+    <p># of hydrated components: {{hydratedComponents()}}</p>
+  </div>
+
+  <main>
+    <app-header [itemsCounter]="itemsCounter()"></app-header>
+
+    <section>
+      <app-nav></app-nav>
+      <app-product></app-product>
+    </section>
+
+    <app-footer></app-footer>
+  </main>
+</div>

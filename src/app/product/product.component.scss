@@ -1,0 +1,14 @@
+@import "../../borders.scss";
+
+.container {
+  @extend .grey-border;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+}

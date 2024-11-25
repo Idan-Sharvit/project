@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="title">
+    <p>{{title}}</p>
+    <p>{{subtitle}}</p>
+  </div>
+
+  <main>
+    <section class="image-description">
+      <img src="../../assets/icons/headphones.png">
+      <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat modi reprehenderit
+        doloribus voluptas dolore
+        ad
+        blanditiis, quia tenetur. Facilis incidunt voluptates nihil ad, cum neque natus atque veniam minus consequatur!
+      </p>
+    </section>
+
+    <section class="add-button">
+      <p>Quantity</p>
+      <input type="text" [(ngModel)]="quantity">
+      <button>Add to card</button>
+    </section>
+
+    <section class="cards">
+      <h1>Recommended products</h1>
+      <div class="cards-list">
+        <app-card [img]="'../../assets/icons/hat.png'"></app-card>
+        <app-card [img]="'../../assets/icons/shoe.png'"></app-card>
+      </div>
+    </section>
+  </main>
+
+</div>

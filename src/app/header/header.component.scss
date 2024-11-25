@@ -1,0 +1,12 @@
+@import "../../borders.scss";
+
+div {
+  @extend .grey-border;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  min-height: 200px;
+  height: 200px;
+  padding: 1rem;
+}
