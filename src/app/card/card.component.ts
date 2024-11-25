@@ -14,11 +14,19 @@ export class CardComponent {
   public subtitle = '@defer';
   public img = input.required<string>();
 
-  public useBlue = input<boolean>(false);
+  public useBlue = signal<boolean>(false);
   public useOrange = signal<boolean>(false);
 
   public addItem(): void {
-    this.useOrange.set(true);
-    this.itemAdded.emit(1);
+    if (this.useBlue()) {
+      this.itemAdded.emit(1);
+    } else {
+      this.useOrange.set(true);
+      this.itemAdded.emit(1);
+      setTimeout(() => {
+        this.useOrange.set(false);
+        this.useBlue.set(true);
+      }, 9000);
+    }
   }
 }

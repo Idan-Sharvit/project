@@ -1,11 +1,12 @@
 import { Component, input, model, output, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CardComponent } from '../card/card.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-details',
   standalone: true,
-  imports: [FormsModule, CardComponent],
+  imports: [CommonModule, FormsModule, CardComponent],
   templateUrl: './details.component.html',
   styleUrl: './details.component.scss',
 })
@@ -15,16 +16,34 @@ export class DetailsComponent {
   public title = '<Details>';
   public subtitle = '@defer';
   public quantity = model<number>(1);
-
-  public useBlue = input<boolean>(false);
+  public useBlue = signal<boolean>(false);
   public useOrange = signal<boolean>(false);
 
   public addItem(): void {
-    this.itemsAdded.emit(this.quantity());
+    if (this.useBlue()) {
+      this.itemsAdded.emit(this.quantity());
+    } else {
+      this.useOrange.set(true);
+      this.itemsAdded.emit(this.quantity());
+
+      setTimeout(() => {
+        this.useOrange.set(false);
+        this.useBlue.set(true);
+      }, 6000);
+    }
   }
 
   public addRecommendedItem(quantity: number): void {
-    this.useOrange.set(true);
-    this.recommendedItemsAdded.emit(quantity);
+    if (this.useBlue()) {
+      this.recommendedItemsAdded.emit(quantity);
+    } else {
+      this.useOrange.set(true);
+      this.recommendedItemsAdded.emit(quantity);
+
+      setTimeout(() => {
+        this.useOrange.set(false);
+        this.useBlue.set(true);
+      }, 6000);
+    }
   }
 }

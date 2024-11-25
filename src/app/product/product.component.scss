@@ -13,10 +13,10 @@
   justify-content: space-between;
 }
 
-.use-orange {
+.container.use-orange {
   @extend .orange-border;
 }
 
-.use-blue {
+.container.use-blue {
   @extend .blue-border;
 }

@@ -1,10 +1,10 @@
-<div class="container">
+<div class="container" [ngClass]="{'use-orange': useOrange(), 'use-blue':useBlue()}">
   <div class="title">
     <p>{{title}}</p>
     <p>{{subtitle}}</p>
   </div>
 
   @defer (hydrate on interaction) {
-  <app-details (itemsAdded)="addItem($event)" (recommendedItemsAdded)="addItem($event)"></app-details>
+  <app-details (itemsAdded)="addItem($event)" (recommendedItemsAdded)="addRecommendedItem($event)"></app-details>
   }
 </div>

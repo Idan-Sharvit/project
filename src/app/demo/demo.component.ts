@@ -3,11 +3,18 @@ import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
 import { NavComponent } from '../nav/nav.component';
 import { ProductComponent } from '../product/product.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-demo',
   standalone: true,
-  imports: [HeaderComponent, FooterComponent, NavComponent, ProductComponent],
+  imports: [
+    CommonModule,
+    HeaderComponent,
+    FooterComponent,
+    NavComponent,
+    ProductComponent,
+  ],
   templateUrl: './demo.component.html',
   styleUrl: './demo.component.scss',
 })
@@ -15,9 +22,6 @@ export class DemoComponent {
   public loadedComponents = signal<number>(0);
   public hydratedComponents = signal<number>(0);
   public itemsCounter = signal<number>(0);
-
-  public useBlue = signal<boolean>(false);
-  public useOrange = signal<boolean>(false);
 
   public onComponentLoad(): void {
     this.loadedComponents.update((value) => value + 1);
@@ -28,6 +32,22 @@ export class DemoComponent {
   }
 
   public onItemAdded(quantity: number): void {
-    this.itemsCounter.update((value) => value + quantity);
+    if (this.itemsCounter() > 0) {
+      this.itemsCounter.update((value) => value + quantity);
+    } else {
+      setTimeout(() => {
+        this.itemsCounter.update((value) => value + quantity);
+      }, 6000);
+    }
+  }
+
+  public onRecommendedItemAdded(quantity: number): void {
+    if (this.itemsCounter() > 0) {
+      this.itemsCounter.update((value) => value + quantity);
+    } else {
+      setTimeout(() => {
+        this.itemsCounter.update((value) => value + quantity);
+      }, 9000);
+    }
   }
 }
