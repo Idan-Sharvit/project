@@ -24,7 +24,7 @@ main {
   flex-direction: column;
   gap: 2rem;
   padding: 1rem;
-  @extend .blue-border;
+  @extend .grey-border;
 
   section {
     display: flex;

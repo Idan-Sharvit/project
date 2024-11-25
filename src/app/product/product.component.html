@@ -4,5 +4,7 @@
     <p>{{subtitle}}</p>
   </div>
 
-  <app-details></app-details>
+  @defer (hydrate on interaction) {
+  <app-details (itemsAdded)="addItem($event)"></app-details>
+  }
 </div>

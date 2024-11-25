@@ -15,7 +15,9 @@
 
     <section>
       <app-nav></app-nav>
-      <app-product></app-product>
+      @defer(hydrate on timer(3000)) {
+      <app-product (itemsAdded)="onItemAdded($event)"></app-product>
+      }
     </section>
 
     <app-footer></app-footer>

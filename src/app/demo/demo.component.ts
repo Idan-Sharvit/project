@@ -23,8 +23,8 @@ export class DemoComponent {
   public onComponentHydrate(): void {
     this.hydratedComponents.update((value) => value + 1);
   }
-}
 
-/**
- *
- */
+  public onItemAdded(quantity: number): void {
+    this.itemsCounter.update((value) => value + quantity);
+  }
+}

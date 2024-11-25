@@ -5,8 +5,12 @@ import { routes } from './app.routes';
 import {
   provideClientHydration,
   withEventReplay,
+  withIncrementalHydration,
 } from '@angular/platform-browser';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes), provideClientHydration(withEventReplay())],
+  providers: [
+    provideRouter(routes),
+    provideClientHydration(withIncrementalHydration(), withEventReplay()),
+  ],
 };

@@ -1,4 +1,4 @@
-import { Component, model } from '@angular/core';
+import { Component, model, output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CardComponent } from '../card/card.component';
 
@@ -10,7 +10,12 @@ import { CardComponent } from '../card/card.component';
   styleUrl: './details.component.scss',
 })
 export class DetailsComponent {
+  public itemsAdded = output<number>();
   public title = '<Details>';
   public subtitle = '@defer';
   public quantity = model<number>(1);
+
+  public addItem(): void {
+    this.itemsAdded.emit(this.quantity());
+  }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, output } from '@angular/core';
 import { DetailsComponent } from '../details/details.component';
 
 @Component({
@@ -9,6 +9,11 @@ import { DetailsComponent } from '../details/details.component';
   styleUrl: './product.component.scss',
 })
 export class ProductComponent {
+  public itemsAdded = output<number>();
   public title = '<Product>';
   public subtitle = '@defer';
+
+  public addItem(quantity: number): void {
+    this.itemsAdded.emit(quantity);
+  }
 }
