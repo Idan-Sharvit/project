@@ -10,7 +10,7 @@
 .beautiful-button {
   background: linear-gradient(90deg, #ff6a00, #ee0979);
   color: #fff;
-  font-size: 1.2rem;
+  font-size: 3rem;
   font-weight: bold;
   border: none;
   border-radius: 50px;
@@ -18,6 +18,8 @@
   cursor: pointer;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
+  width: 700px;
+  height: 200px;
 }
 
 .beautiful-button:hover {
