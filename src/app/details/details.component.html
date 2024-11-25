@@ -16,15 +16,15 @@
 
     <section class="add-button">
       <p>Quantity</p>
-      <input type="text" [(ngModel)]="quantity">
+      <input type="number" [(ngModel)]="quantity">
       <button (click)="addItem()">Add to card</button>
     </section>
 
     <section class="cards">
       <h1>Recommended products</h1>
       <div class="cards-list">
-        <app-card [img]="'../../assets/icons/hat.png'"></app-card>
-        <app-card [img]="'../../assets/icons/shoe.png'"></app-card>
+        <app-card [img]="'../../assets/icons/hat.png'" (itemAdded)="addRecommendedItem($event)"></app-card>
+        <app-card [img]="'../../assets/icons/shoe.png'" (itemAdded)="addRecommendedItem($event)"></app-card>
       </div>
     </section>
   </main>

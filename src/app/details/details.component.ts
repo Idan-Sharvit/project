@@ -11,11 +11,16 @@ import { CardComponent } from '../card/card.component';
 })
 export class DetailsComponent {
   public itemsAdded = output<number>();
+  public recommendedItemsAdded = output<number>();
   public title = '<Details>';
   public subtitle = '@defer';
   public quantity = model<number>(1);
 
   public addItem(): void {
     this.itemsAdded.emit(this.quantity());
+  }
+
+  public addRecommendedItem(quantity: number): void {
+    this.recommendedItemsAdded.emit(quantity);
   }
 }

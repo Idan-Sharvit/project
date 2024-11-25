@@ -5,6 +5,6 @@
   </div>
 
   @defer (hydrate on interaction) {
-  <app-details (itemsAdded)="addItem($event)"></app-details>
+  <app-details (itemsAdded)="addItem($event)" (recommendedItemsAdded)="addItem($event)"></app-details>
   }
 </div>
