@@ -1,7 +1,8 @@
-import { Component, input, model, output, signal } from '@angular/core';
+import { Component, inject, model, output, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CardComponent } from '../card/card.component';
 import { CommonModule } from '@angular/common';
+import { ComponentCounterService } from '../component-counter.service';
 
 @Component({
   selector: 'app-details',
@@ -18,6 +19,7 @@ export class DetailsComponent {
   public quantity = model<number>(1);
   public useBlue = signal<boolean>(false);
   public useOrange = signal<boolean>(false);
+  public componentCounterService = inject(ComponentCounterService);
 
   public addItem(): void {
     if (this.useBlue()) {
@@ -29,6 +31,8 @@ export class DetailsComponent {
       setTimeout(() => {
         this.useOrange.set(false);
         this.useBlue.set(true);
+        this.componentCounterService.incrementLoadedComponents();
+        this.componentCounterService.incrementHydratedComponents();
       }, 6000);
     }
   }
@@ -43,6 +47,8 @@ export class DetailsComponent {
       setTimeout(() => {
         this.useOrange.set(false);
         this.useBlue.set(true);
+        this.componentCounterService.incrementLoadedComponents();
+        this.componentCounterService.incrementHydratedComponents();
       }, 6000);
     }
   }

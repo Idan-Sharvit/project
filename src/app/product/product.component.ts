@@ -1,6 +1,7 @@
-import { Component, input, output, signal } from '@angular/core';
+import { Component, inject, input, output, signal } from '@angular/core';
 import { DetailsComponent } from '../details/details.component';
 import { CommonModule } from '@angular/common';
+import { ComponentCounterService } from '../component-counter.service';
 
 @Component({
   selector: 'app-product',
@@ -15,6 +16,8 @@ export class ProductComponent {
   public title = '<Product>';
   public subtitle = '@defer';
 
+  public componentCounterService = inject(ComponentCounterService);
+
   public useBlue = signal<boolean>(false);
   public useOrange = signal<boolean>(false);
 
@@ -27,6 +30,8 @@ export class ProductComponent {
       setTimeout(() => {
         this.useOrange.set(false);
         this.useBlue.set(true);
+        this.componentCounterService.incrementLoadedComponents();
+        this.componentCounterService.incrementHydratedComponents();
       }, 3000);
     }
   }
@@ -40,6 +45,8 @@ export class ProductComponent {
       setTimeout(() => {
         this.useOrange.set(false);
         this.useBlue.set(true);
+        this.componentCounterService.incrementLoadedComponents();
+        this.componentCounterService.incrementHydratedComponents();
       }, 3000);
     }
   }
