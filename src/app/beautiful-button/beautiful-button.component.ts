@@ -6,6 +6,7 @@ import { Component, signal } from '@angular/core';
   imports: [],
   templateUrl: './beautiful-button.component.html',
   styleUrl: './beautiful-button.component.scss',
+  // host: { ngSkipHydration: 'true' },
 })
 export class BeautifulButtonComponent {
   protected totalCount = signal(0);
