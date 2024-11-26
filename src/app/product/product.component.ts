@@ -1,4 +1,4 @@
-import { Component, inject, input, output, signal } from '@angular/core';
+import { Component, inject, output, signal } from '@angular/core';
 import { DetailsComponent } from '../details/details.component';
 import { CommonModule } from '@angular/common';
 import { ComponentCounterService } from '../component-counter.service';
