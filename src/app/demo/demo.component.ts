@@ -29,6 +29,8 @@ export class DemoComponent {
     return this.componentsCounterService.hydratedComponents();
   });
 
+  recommendedItemAdded = signal(false);
+
   public onItemAdded(quantity: number): void {
     if (this.itemsCounter() > 0) {
       this.itemsCounter.update((value) => value + quantity);
@@ -40,10 +42,12 @@ export class DemoComponent {
   }
 
   public onRecommendedItemAdded(quantity: number): void {
-    if (this.itemsCounter() > 0) {
+    if (this.itemsCounter() > 0 && this.recommendedItemAdded()) {
+      this.recommendedItemAdded.set(true);
       this.itemsCounter.update((value) => value + quantity);
     } else {
       setTimeout(() => {
+        this.recommendedItemAdded.set(true);
         this.itemsCounter.update((value) => value + quantity);
       }, 9000);
     }
