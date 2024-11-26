@@ -12,5 +12,6 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
     provideClientHydration(withIncrementalHydration(), withEventReplay()),
+    // provideClientHydration(),
   ],
 };
